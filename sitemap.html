@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap</title>
+  <style>
+header{
+  height: 200px;
+}   
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(144, 222, 144);
+    
+    
+  }
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+h1:hover{
+    color: rgb(80, 121, 73);
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+svg {
+    width: 80%;
+    height: auto;
+}
+.node {
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+.node:hover {
+    fill: #0af91a; /* Change color on hover */
+}
+.link {
+    text-decoration: none;
+    fill: #000; /* Node text color */
+    font-size: 12px;
+    width: auto;
+}
+
+.main {
+            max-width: auto;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;        
+        }        
+        .icon {
+            width: 150px;
+        }
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+        .menu ul {
+            list-style-type: none;
+            display: flex;
+        }
+        .menu ul li {
+            margin-right: 20px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .menu ul li a:hover {
+            color: lightgreen;
+        }
+        .dropdown select {
+            background-color: #333;
+            padding: 2px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .dropdown select:hover {
+            background-color: #45a049;
+        }
+        .dropdown select option {
+            background-color: #333;
+            font-size: 16px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown select option:hover {
+            background-color: #111;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 200px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1 1 300px;
+            padding: 0 20px;
+        }
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .footer-section.about p {
+            color: #ccc;
+            font-size: 14px;
+        }      
+        .footer-section.links ul {
+            position:static;
+            bottom: 20px;
+            right: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section.links {
+            flex: 1;
+            text-align: right;
+        }        
+
+        .footer-section.links ul li {
+            margin-bottom: 10px;
+            
+        }
+        .footer-section.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section.links ul li a:hover {
+            color: lightgreen;
+        }  
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .footer-section.links button {
+            background-color: #4CAF50; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .footer-section.links button a {
+            text-decoration: none;
+            color: inherit;
+        }  
+        .footer-section.links button:hover {
+            background-color: #45a049; 
+        }
+
+  
+  </style>
+</head>
+<body>
+  <header>
+  <div class="main">
+    <div class="navbar">
+        <div class="icon">
+            <img class="logo" src="logoN.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Site map</a></li>
+                <li><a href="#">User profile</a></li>
+                <li><a href="#">Comment</a></li>
+                <li><a href="#">About us</a></li>
+                <li class="dropdown">
+                    <select onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                    <option value="#">Content</option>
+                    <option value="page1.html">Student 1</option>
+                    <option value="page2.html">Student 2</option>
+                    <option value="page3.html">Student 3</option>
+                    <option value="page3.html">Student 4</option>
+                    </select>
+                </li>
+            </ul>
+        </div>       
+    </div>
+    </header>
+    <h1>Visual Sitemap</h1>
+  <div id="container">
+    <svg viewBox="0 0 600 400" >
+
+      <!--Home-->
+      <rect class="node" x="250" y="50" rx="10" ry="10" width="80" height="40" fill="green" />
+
+      <!--Second Row-->
+      <rect class="node" x="0" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="100" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="200" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="300" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="400" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="500" y="130" rx="10" ry="10" width="80" height="40" fill="green" />
+
+      <!--Last Row-->
+      <rect class="node" x="0" y="0" rx="10" ry="10" width="80" height="40" fill="green" />
+      <rect class="node" x="500" y="0" rx="10" ry="10" width="80" height="40" fill="green" />
+
+      <!--Third Row-->
+      <rect class="node" x="0" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+      <rect class="node" x="100" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+      <rect class="node" x="200" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+      <rect class="node" x="300" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+      <rect class="node" x="400" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+      <rect class="node" x="500" y="200" rx="10" ry="10" width="80" height="100" fill="green" />
+
+      <!--Home-->
+      <line x1="290" y1="90" x2="290" y2="110" stroke="white" stroke-width="2" />
+
+      <!--Third Row-->
+      <line x1="40" y1="170" x2="40" y2="200" stroke="white" stroke-width="2" />
+      <line x1="137" y1="170" x2="137" y2="200" stroke="white" stroke-width="2" />
+      <line x1="240" y1="170" x2="240" y2="200" stroke="white" stroke-width="2" />
+      <line x1="337" y1="170" x2="337" y2="200" stroke="white" stroke-width="2" />
+      <line x1="447" y1="170" x2="447" y2="200" stroke="white" stroke-width="2" />
+      <line x1="540" y1="170" x2="540" y2="200" stroke="white" stroke-width="2" />
+
+      <!--Second Row-->
+      <line x1="40" y1="110" x2="40" y2="130" stroke="white" stroke-width="2" />
+      <line x1="137" y1="110" x2="137" y2="130" stroke="white" stroke-width="2" />
+      <line x1="240" y1="110" x2="240" y2="130" stroke="white" stroke-width="2" />
+      <line x1="337" y1="110" x2="337" y2="130" stroke="white" stroke-width="2" />
+      <line x1="447" y1="110" x2="447" y2="130" stroke="white" stroke-width="2" />
+      <line x1="540" y1="110" x2="540" y2="130" stroke="white" stroke-width="2" />
+
+
+      <!--Two side line-->
+      <line x1="37" y1="40" x2="37" y2="70" stroke="white" stroke-width="2" />
+      <line x1="540" y1="40" x2="540" y2="70" stroke="white" stroke-width="2" />
+      
+      <!--Second line-->
+      <path fill="transparent" stroke="white" stroke-width="2" d="M 40,110 L 540,110" />
+
+      <!--First line-->
+      <path fill="transparent" stroke="white" stroke-width="2" d="M 37,70 L 250,70" />
+      <path fill="transparent" stroke="white" stroke-width="2" d="M 330,70 L 540,70" />
+    
+      <a class="link" href="home.html">
+        <title id="sitemap-title">Home</title>
+        <text x="290" y="75" text-anchor="middle">Home</text>
+      </a>
+      <a class="link" href="shop.html">
+        <title id="sitemap-title">Shop</title>
+        <text x="37" y="153" text-anchor="middle">Shop</text>
+      </a>
+      <a class="link" href="gallery.html">
+        <title id="sitemap-title">Gallery</title>
+        <text x="137" y="153" text-anchor="middle">Gallery</text>
+      </a>
+      <a class="link" href="user.html">
+        <title id="sitemap-title">User Profile</title>
+        <text x="240" y="153" text-anchor="middle">User Profile</text>
+      </a>
+      <a class="link" href="feedback.html">
+        <title id="sitemap-title">Feedback Form</title>
+        <text x="337" y="153" text-anchor="middle">Feedback </text>
+      </a>
+      <a class="link" href="team.html">
+        <title id="sitemap-title">Team</title>
+        <text x="437" y="153" text-anchor="middle">Team</text>
+      </a>
+      <a class="link" href="content.html">
+        <title id="sitemap-title">Contents</title>
+        <text x="540" y="153" text-anchor="middle">Contents</text>
+      </a>
+
+
+      <a class="link" href="shop.html">
+        <image xlink:href="b.jpg" width="75" height="100" x="2" y="200" />
+      </a>
+
+      <a class="link" href="gallery.html">
+        <image xlink:href="a.jpg" width="75" height="100" x="102" y="200" />
+      </a>
+
+      <a class="link" href="user.html">
+        <image xlink:href="c.jpg" width="75" height="100" x="202" y="200" />
+      
+      </a>
+      <a class="link" href="feedback.html">
+        <image xlink:href="g.jpg" width="75" height="100" x="302" y="200" />
+        
+      </a>
+
+      <a class="link" href="team.html">
+        <image xlink:href="e.jpg" width="75" height="100" x="402" y="200" />
+        
+      </a>
+      <a class="link" href="content.html">
+        <image xlink:href="f.jpg" width="75" height="100" x="502" y="200" />
+      </a>
+
+
+      <a class="link" href="about.html">
+        <title id="sitemap-title">About Us</title>
+        <text x="37" y="25" text-anchor="middle">About Us</text>
+      </a>
+      <a class="link" href="content.html">
+        <title id="sitemap-title">Featured Content</title>
+        <text x="540" y="25" text-anchor="middle">Featured Cn:</text>
+      </a>
+    </svg>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>We believe that true well-being encompasses more than just physical health—it’s a harmonious
+                balance of mind, body, and spirit. Our journey began with a simple idea: to empower individuals
+                to live their healthiest, most vibrant lives. Founded by passionate health enthusiasts, we
+                embarked on a mission to create a space where wellness is not a luxury but a birthright. Our
+                personal experiences with holistic healing, nutrition, and mindfulness inspired us to share our
+                knowledge with the world. Imagine a world where everyone wakes up feeling energized, nourished,
+                and mentally resilient. Our vision is to be the catalyst for positive change, one person at a
+                time. We blend ancient wisdom with modern science and our approach is holistic and personalized.
+                We measure success not by profits, but by the positive impact we create. Join us in making
+                well-being contagious. Ready to prioritize your health? Explore our services, attend our
+                workshops, and connect with our vibrant community. Let’s walk this path together—because good
+                health is a shared adventure.</p>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">Gallery</a></li>
+                <li><a href="services.html">Shop</a></li>
+                <li><a href="contact.html">Sitemap</a></li>
+                <li><a href="contact.html">User Profile</a></li>
+                <li class="dropdown2">
+                    <select
+                        onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                        <option value="#">Page Editor</option>
+                        <option value="page1.html">Student 1</option>
+                        <option value="page2.html">Student 2</option>
+                        <option value="page3.html">Student 3</option>
+                        <option value="page3.html">Student 4</option>
+                    </select>
+                </li>
+            </ul>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2024 Good Health and Well-being | Designed by Dijital Divas
+    </div>
+</footer>
+
+  
+</body>
+</html>

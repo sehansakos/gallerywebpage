@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Gallery Page</title>
+  <style>
+    header {
+	margin: 0;
+	padding: 0;
+	height: 150px;
+	width: auto;
+	background-color: rgb(5, 74, 5); 
+	color: #fff;  
+}
+
+header h1 {
+	text-align:center;
+	font-size:80px;
+}
+header h1 p{
+  text-align: center;
+  font-size: 20px;
+
+}
+.gallery {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	background-color: rgb(132, 214, 132);
+}
+
+.thumbnail {
+	cursor: pointer;
+	position: relative;
+	width: 270px; 
+	margin: 10px;
+	border: 2px solid #ddd; 
+	border-radius: 5px; 
+	overflow: hidden; 
+	box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); 
+}
+  
+.thumbnail:hover {
+	transform: scale(1.05); 
+}
+  
+.thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+ }
+  
+.thumbnail .overlay {
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(37, 207, 60, 0.5);
+	color: #fff;
+	opacity: 0; 
+	transition: opacity 0.3s ease;
+}
+  
+.thumbnail:hover .overlay {
+	opacity: 1; 
+}
+  
+.thumbnail .overlay-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+  
+.thumbnail .title {
+	font-size: 35px;
+	font-weight: bold;
+	margin: 10px;
+	
+
+}
+  
+.thumbnail .description {
+	padding: 20px;
+	font-size: 18px;
+	text-align: left;
+	
+}
+  
+.thumbnail .button{
+	border: 2px solid #ffffff; 
+    padding: 10px; 
+	margin: 10px;
+	
+}
+  
+.expanded-view {
+	display: none;
+	position: fixed;
+	height: 500px;
+	width: 1000px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.8); 
+	z-index: 999;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: left;
+} 
+  
+  
+.expanded-view img {
+	
+	max-width: 30%;
+	max-height: 30%;
+	border: 2px solid #fff; 
+	border-radius: 10px; 
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+	margin-bottom: 20px;
+}
+  
+.expanded-view .close-box {
+	background-color: rgba(0, 0, 0, 0.5); 
+	border-radius: 5px; 
+	padding: 10px;
+	position: absolute; 
+	top: 10px;
+	right: 10px; 
+	z-index: 1000; 
+	
+}
+  
+.expanded-view .close-button {
+	cursor: pointer;
+	color: #fff; 
+	font-size: 10px;
+	font-weight: bold;
+	transition: background-color 0.3s ease;
+	text-align: right;
+} 
+  
+.expanded-view .description {
+	color: #fff; 
+	
+}
+  
+.expanded-view .title {
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+  
+.expanded-view .text {
+	border: 2px solid #ffffff; 
+    padding: 50px; 
+	margin: 10px;
+	text-align:center;
+	font-size: 18px;
+	
+}
+  
+.container {
+	text-align: left;
+	color: #fff;
+}
+  
+#description {
+	font-size: 24px;
+	font-family: Arial, sans-serif;
+	color: rgb(255, 255, 255);
+} 
+body{
+	background-color: rgb(61, 122, 61);
+} 
+
+footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 200px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1 1 300px;
+            padding: 0 20px;
+        }
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .footer-section.about p {
+            color: #ccc;
+            font-size: 14px;
+        }      
+        .footer-section.links ul {
+            position:static;
+            bottom: 20px;
+            right: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section.links {
+            flex: 1;
+            text-align: right;
+        }        
+
+        .footer-section.links ul li {
+            margin-bottom: 10px;
+            
+        }
+        .footer-section.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section.links ul li a:hover {
+            color: lightgreen;
+        }  
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .footer-section.links button {
+            background-color: #4CAF50; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .footer-section.links button a {
+            text-decoration: none;
+            color: inherit;
+        }  
+        .footer-section.links button:hover {
+            background-color: #45a049; 
+        }
+.main {
+            
+            margin: 0 auto;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position:fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999; 
+            height: 50px;       
+        }        
+        .icon {
+            width: 70px;
+            height: 70px;
+        }
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+        .menu ul {
+            list-style-type: none;
+            display: flex;
+        }
+        .menu ul li {
+            margin-right: 20px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .menu ul li a:hover {
+            color: lightgreen;
+        }
+        .dropdown select {
+            background-color: #333;
+            padding: 2px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .dropdown select:hover {
+            background-color: #45a049;
+        }
+        .dropdown select option {
+            background-color: #333;
+            font-size: 16px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown select option:hover {
+            background-color: #111;
+        }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>Gallery 
+      <p>Good Health And Well-being</p>
+    </h1>
+   
+    <div class="main">
+      <div class="navbar">
+          <div class="icon">
+              <img class="logo" src="logoN.png" alt="Logo">
+          </div>
+          <div class="menu">
+              <ul>
+                  <li><a href="home.html">HOME</a></li>
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="shop.html">Shop</a></li>
+                  <li><a href="sitemap.html">Site map</a></li>
+                  <li><a href="user.html">User profile</a></li>
+                  <li><a href="#">Comment</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li class="dropdown">
+                      <select onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                      <option value="#">Content</option>
+                      <option value="page1.html">Student 1</option>
+                      <option value="page2.html">Student 2</option>
+                      <option value="page3.html">Student 3</option>
+                      <option value="page3.html">Student 4</option>
+                      </select>
+                  </li>
+              </ul>
+          </div>       
+      </div>
+
+  </header>
+  <div class="gallery">
+    <div class="thumbnail" data-large-image="1.jpg" data-description="Nutrition and diet play pivotal roles in maintaining overall health and vitality. Nutrition involves the intake and utilization of nutrients from food, essential for bodily functions and optimal performance. A balanced diet rich in fruits, vegetables, lean proteins, and whole grains supports physical well-being, while limiting processed foods and sugars fosters better health outcomes. Adopting healthy eating habits ensures the body receives essential nutrients for energy, growth, and disease prevention.">
+      <img src="1.jpg" alt="Nutrition and Diet">
+      <div class="overlay">
+        <div class="title" id="Nutrition and Diet">Nutrition and Diet</div>
+        <hr>
+        <div class="description">Nutrition and diet are vital for overall health. A balanced diet, rich in fruits, vegetables, lean proteins, and whole grains, supports physical and mental well-being.</div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="2.jpg" data-description="Physical activity refers to any bodily movement that requires energy expenditure. It encompasses a wide range of activities, from daily tasks like walking and climbing stairs to structured exercise routines such as jogging, swimming, or weightlifting. Engaging in regular physical activity offers numerous health benefits, including improved cardiovascular health, strengthened muscles and bones, enhanced mental well-being, and better weight management. Additionally, it can reduce the risk of chronic diseases like heart disease, diabetes, and certain cancers. The World Health Organization recommends adults aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week, along with muscle-strengthening activities on two or more days per week. Children and adolescents should engage in physical activity for at least 60 minutes each day. Incorporating physical activity into daily life can be enjoyable and fulfilling, contributing to overall physical and mental vitality.">
+      <img src="2.jpg" alt="Physical Activity">
+      <div class="overlay">
+        <div class="title" id="Physical Activity">Physical Activity</div>
+        <hr>
+        <div class="description">Physical activity encompasses any movement requiring energy expenditure, from daily tasks to structured exercises. It offers numerous health benefits, including improved cardiovascular health. </div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="3.jpg" data-description="Mental health is a multifaceted aspect of overall well-being that encompasses emotional, psychological, and social dimensions. It influences how individuals think, feel, and act, shaping their perceptions, relationships, and responses to life's challenges. Just as physical health is crucial, so is mental health, as it profoundly impacts every aspect of daily life.
+    In the modern world, where stressors abound and the pace of life can be relentless, finding ways to prioritize mental health and incorporate relaxation practices into daily routines is paramount. Relaxation is the antidote to stress, offering a reprieve from the demands of everyday life and allowing individuals to recharge and rejuvenate their minds and bodies.">
+      <img src="3.jpg" alt="Mental Health and Relaxation">
+      <div class="overlay">
+        <div class="title" id="Mental Health and Relaxation">Mental Health and Relaxation</div>
+        <hr>
+        <div class="description">Mental health and relaxation are essential aspects of overall well-being. Mental health involves emotional, psychological, and social well-being, influencing how we think, feel, and act. </div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="pexels-ketut-subiyanto-4353618.jpg" data-description="
+    Social connections are fundamental to human well-being, shaping our sense of identity, belonging, and purpose. They encompass the relationships we cultivate with family, friends, colleagues, and communities, providing opportunities for support, companionship, and shared experiences.
+    Research consistently demonstrates the profound impact of social connections on mental, emotional, and physical health. Strong social ties are associated with lower rates of depression, anxiety, and stress, as well as greater resilience in the face of adversity. Meaningful relationships offer a sense of validation, acceptance, and understanding, bolstering self-esteem and fostering a positive outlook on life.">
+      <img src="pexels-ketut-subiyanto-4353618.jpg" alt="Social Connections">
+      <div class="overlay">
+        <div class="title" id="Social Connections">Social Connections</div>
+        <hr>
+        <div class="description">Social connection is the lifeline of human existence, weaving intricate bonds between individuals. It transcends physical proximity, fostering empathy, understanding, and camaraderie.</div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="5.jpg" data-description="Sleep and rest are essential components of overall health and well-being, playing critical roles in physical, mental, and emotional functioning. Sleep is a naturally recurring state characterized by reduced consciousness, decreased sensory activity, and altered brainwave patterns. It is a vital process that allows the body to repair, regenerate, and consolidate memories.
+    Quality sleep is crucial for numerous physiological functions, including immune system regulation, hormone balance, and cellular repair. Adequate rest supports cognitive processes such as learning, memory consolidation, and decision-making. Furthermore, sleep plays a significant role in emotional regulation, with insufficient sleep linked to mood disturbances, irritability, and heightened stress responses.">
+      <img src="5.jpg" alt="Sleep and Rest">
+      <div class="overlay">
+        <div class="title" id="Sleep and Rest">Sleep and Rest</div>
+        <hr>
+        <div class="description">Sleep and rest are essential pillars of well-being, offering rejuvenation for mind and body. Sleep, a vital physiological need, facilitates memory consolidation, emotional regulation.</div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="6.jpg" data-description="Outdoor activities encompass a diverse array of recreational pursuits that take place in natural environments, offering individuals opportunities for physical exercise, mental relaxation, and connection with nature. From hiking through scenic trails and camping under the stars to cycling along picturesque routes and exploring waterways through kayaking or canoeing, outdoor activities cater to a wide range of interests and skill levels. Whether it's fishing in a serene lake, rock climbing on rugged cliffs, or simply enjoying a leisurely picnic in a park, outdoor activities provide countless benefits for overall well-being. Engaging in these pursuits fosters physical fitness, reduces stress, promotes mental clarity, and cultivates a deeper appreciation for the natural world.
+     Whether pursued solo, with friends, or as part of organized group outings, outdoor activities offer opportunities for adventure, exploration, and rejuvenation amidst the beauty of the great outdoors.">
+      <img src="6.jpg" alt="Outdoor Activities">
+      <div class="overlay">
+        <div class="title" id="Outdoor Activities">Outdoor Activities</div>
+        <hr>
+        <div class="description">Outdoor activities invigorate both body and spirit, offering a canvas for exploration and adventure. From hiking amidst nature's splendor to cycling along scenic trails, they promote physical fitness and mental rejuvenation.</div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="8.jpg" data-description="Professional support refers to the assistance, guidance, and expertise provided by trained professionals in various fields to help individuals address specific challenges, achieve goals, or navigate complex situations. This support can encompass a wide range of disciplines, including mental health counseling, therapy, coaching, financial planning, legal advice, career counseling, and more.
+    In the realm of mental health, professional support may involve therapy sessions with psychologists, psychiatrists, or licensed counselors to address issues such as anxiety, depression, trauma, or relationship problems. These professionals offer evidence-based interventions, strategies, and support to help individuals improve their mental well-being and cope with life's challenges.">
+      <img src="8.jpg" alt="Professional Support">
+      <div class="overlay">
+        <div class="title" id="Professional Support">Professional Support</div>
+        <hr>
+        <div class="description">Professional support provides guidance and expertise across various domains, empowering individuals to overcome challenges and achieve their goals. From career counseling to therapy. </div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+
+
+    <div class="thumbnail" data-large-image="7.jpg" data-description="Nature and the environment encompass the intricate balance of ecosystems, natural resources, and living organisms that constitute our planet. From expansive forests and pristine oceans to vast deserts and towering mountains, the natural world is a source of awe-inspiring beauty and essential sustenance for all life forms.
+    The environment encompasses the air we breathe, the water we drink, the soil that supports plant life, and the climate that shapes our weather patterns. It includes the diverse array of species that inhabit Earth, from microscopic bacteria to majestic mammals, each playing a vital role in maintaining ecological balance.">
+      <img src="7.jpg" alt="Nature and Environment">
+      <div class="overlay">
+        <div class="title" id="Nature and Environment">Nature and Environment</div>
+        <hr>
+        <div class="description">Nature and the environment encompass the intricate web of ecosystems and biodiversity that sustain life on Earth. They provide essential resources, clean air, water, and food. </div>
+        <div class="button">More Info</div>
+      </div>
+    </div>
+    
+    
+  </div>
+  <div class="expanded-view" id="expanded-view">
+    <div class="content">
+      <div class="container">
+        <label for="fontInput">Select Font:</label>
+        <select id="fontInput">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Helvetica">Helvetica</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <label for="colorInput">Select Color:</label>
+        <input type="color" id="colorInput">
+        
+      
+        <div class="close-button" id="close-button"> X </div>
+        <img src="" alt="" style="float:left">
+        <div class="description" id="description">
+            <div class="title">Title</div>
+            <div class="text">Description</div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+      <div class="footer-section about">
+          <h3>About Us</h3>
+          <p>We believe that true well-being encompasses more than just physical health—it’s a harmonious
+              balance of mind, body, and spirit. Our journey began with a simple idea: to empower individuals
+              to live their healthiest, most vibrant lives. Founded by passionate health enthusiasts, we
+              embarked on a mission to create a space where wellness is not a luxury but a birthright. Our
+              personal experiences with holistic healing, nutrition, and mindfulness inspired us to share our
+              knowledge with the world. Imagine a world where everyone wakes up feeling energized, nourished,
+              and mentally resilient. Our vision is to be the catalyst for positive change, one person at a
+              time. We blend ancient wisdom with modern science and our approach is holistic and personalized.
+              We measure success not by profits, but by the positive impact we create. Join us in making
+              well-being contagious. Ready to prioritize your health? Explore our services, attend our
+              workshops, and connect with our vibrant community. Let’s walk this path together—because good
+              health is a shared adventure.</p>
+      </div>
+
+      <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="about.html">Gallery</a></li>
+              <li><a href="services.html">Shop</a></li>
+              <li><a href="contact.html">Sitemap</a></li>
+              <li><a href="contact.html">User Profile</a></li>
+              <li class="dropdown2">
+                  <select
+                      onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                      <option value="#">Page Editor</option>
+                      <option value="page1.html">Student 1</option>
+                      <option value="page2.html">Student 2</option>
+                      <option value="page3.html">Student 3</option>
+                      <option value="page3.html">Student 4</option>
+                  </select>
+              </li>
+          </ul>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      © 2024 Good Health and Well-being | Designed by Dijital Divas
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const expandedView = document.querySelector('.expanded-view');
+    const expandedImage = expandedView.querySelector('img');
+    const expandedTitle = expandedView.querySelector('.title');
+    const expandedText = expandedView.querySelector('.text');
+    const closeButton = expandedView.querySelector('.close-button');
+  
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+        const largeImageSrc = thumbnail.getAttribute('data-large-image');
+        const description = thumbnail.getAttribute('data-description');
+        expandedImage.src = largeImageSrc;
+        expandedTitle.textContent = thumbnail.querySelector('.title').textContent;
+        expandedText.textContent = description;
+        expandedView.style.display = 'block';
+      });
+    });
+  
+    closeButton.addEventListener('click', function() {
+      expandedView.style.display = 'none';
+    });
+  });
+// Get the close button element
+const closeButton = document.getElementById('close-button');
+
+// Get the expanded view container
+const expandedView = document.getElementById('expanded-view');
+
+// Add a click event listener to the close button
+closeButton.addEventListener('click', function() {
+    // Hide the expanded view when the close button is clicked
+    expandedView.style.display = 'none';
+});
+
+document.getElementById('fontInput').addEventListener('change', function() {
+  var font = this.value;
+  document.getElementById('description').style.fontFamily = font;
+});
+
+document.getElementById('colorInput').addEventListener('input', function() {
+  var color = this.value;
+  document.getElementById('description').style.color = color;
+});
+
+  </script>
+</body>
+</html>

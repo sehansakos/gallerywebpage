@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ContentStudent4</title>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 150px;
+}
+.navbar {
+    align-items: center;
+    justify-content: left;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+}
+
+.background {
+    background: rgb(146, 222, 146);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
+.logo {
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+    padding: 10px;
+    display:inline-block;
+    
+
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: darkgreen;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.nav-list li a:hover {
+    color: rgb(159, 209, 8);
+}
+
+.rightnav {
+    width: 30%;
+    text-align: right;
+}
+
+#search {
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+
+.firstsection {
+    background-color: white;
+    height: 400px;
+}
+
+.secondsection {
+    background-color: rgb(201, 233, 201) ;
+    height: 400px;
+}
+
+.thirdsection {
+    background-color: white;
+    height: 400px;
+}
+
+.fourthsection {
+    background-color: rgb(201, 233, 201);
+    height: 400px;
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    max-width: 80%;
+    margin: auto;
+    height: 80%;
+}
+
+.firsthalf {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 35px;
+    color: darkgreen;
+}
+
+.text-small {
+    font-size: 18px;
+}
+
+.btn {
+    padding: 8px 20px;
+    margin: 7px 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+.section-Left {
+    flex-direction: row-reverse;
+}
+
+.paras {
+    padding: 0px 65px;
+}
+
+.thumbnail img {
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 26px;
+    margin-top: 19px;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-footer {
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    color: darkgreen;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+}
+
+
+.rightnav {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#search {
+    box-sizing: border-box;
+    width: 70%;
+    padding: 8px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    margin: 7px 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.picture {
+    height: 200px;
+    width: 200px;
+    padding: 5px 5px 5px 5px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    float: left;
+    margin-right: 25px;
+}
+
+.main {
+            max-width: auto;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;        
+        }        
+        .icon {
+            width: 150px;
+        }
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+        .menu ul {
+            list-style-type: none;
+            display: flex;
+        }
+        .menu ul li {
+            margin-right: 20px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .menu ul li a:hover {
+            color: lightgreen;
+        }
+        .dropdown select {
+            background-color: #333;
+            padding: 2px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .dropdown select:hover {
+            background-color: #45a049;
+        }
+        .dropdown select option {
+            background-color: #333;
+            font-size: 16px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown select option:hover {
+            background-color: #111;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 200px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1 1 300px;
+            padding: 0 20px;
+        }
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .footer-section.about p {
+            color: #ccc;
+            font-size: 14px;
+        }      
+        .footer-section.links ul {
+            position:static;
+            bottom: 20px;
+            right: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section.links {
+            flex: 1;
+            text-align: right;
+        }        
+
+        .footer-section.links ul li {
+            margin-bottom: 10px;
+            
+        }
+        .footer-section.links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section.links ul li a:hover {
+            color: lightgreen;
+        }  
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .footer-section.links button {
+            background-color: #4CAF50; 
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .footer-section.links button a {
+            text-decoration: none;
+            color: inherit;
+        }  
+        .footer-section.links button:hover {
+            background-color: #45a049; 
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img class="logo" src="logoN.png" alt="Logo">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Site map</a></li>
+                    <li><a href="#">User profile</a></li>
+                    <li><a href="#">Comment</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li class="dropdown">
+                        <select onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                        <option value="#">Content</option>
+                        <option value="page1.html">Student 1</option>
+                        <option value="page2.html">Student 2</option>
+                        <option value="page3.html">Student 3</option>
+                        <option value="page3.html">Student 4</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul class="nav-list">
+                    <li><a href="#Nutrition and Diet">Nutrition and Diet</a></li>
+                    <li><a href="#Physical Activity">Physical Activity</a></li>
+                    <li><a href="#Mental Health and Relaxation">Mental Health and Relaxation</a></li>
+                    <li><a href="#Social Connections">Social Connections</a></li>
+                    <li><a href="#Sleep and Rest">Sleep and Rest</a></li>
+                    <li><a href="#Outdoor Activities">Outdoor Activities</a></li>
+                    <li><a href="#Professional Support">Professional Support</a></li>
+                    <li><a href="#Nature and Environment">Nature and Environment</a></li>
+                </ul>
+            </div>       
+        </div>
+
+    </nav>
+    </header>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Nutrition and Diet">Nutrition and Diet
+                </h1><br>
+                <p class="text-small">
+                    <img class="picture" src="1.jpg" slt="nutrition" style="float: left;"><br>
+                    Nutrition and diet are crucial components of overall health and well-being. Nutrition refers to the process of acquiring and utilizing nutrients from food for growth, development, and maintenance of bodily functions. A balanced diet provides essential nutrients such as carbohydrates, proteins, fats, vitamins, and minerals in appropriate proportions to support optimal health.
+                    A healthy diet is one that includes a variety of foods from all food groups, emphasizing fruits, vegetables, whole grains, lean proteins, and healthy fats while limiting processed foods, sugary beverages, and excessive amounts of sodium, saturated fats, and added sugars.
+                    The benefits of a nutritious diet extend beyond physical health, influencing mental and emotional well-being as well. Good nutrition supports cognitive function, mood regulation, and can help prevent chronic diseases such as obesity, heart disease, diabetes, and certain cancers.
+                    Individual nutritional needs vary based on factors such as age, gender, activity level, and underlying health conditions.
+                </p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="secondsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Physical Activity">Physical Activity
+                </h1>
+                <p class="text-small">
+                    <img class="picture" src="2.jpg" slt="nutrition" style="float: right;"><br>
+                    Physical activity is any bodily movement produced by skeletal muscles that requires energy expenditure. It encompasses a wide range of activities, from daily tasks like walking and climbing stairs to more structured exercises such as running, swimming, and weightlifting. The importance of physical activity cannot be overstated, as it contributes significantly to overall health and well-being.
+                    Regular physical activity has numerous benefits for both the body and mind. It is essential for maintaining a healthy weight, as it helps to burn calories and build muscle mass. It also plays a crucial role in reducing the risk of chronic diseases such as heart disease, type 2 diabetes, and certain cancers. Additionally, physical activity can improve cardiovascular health by strengthening the heart and improving circulation.
+                    Beyond its physical benefits, regular exercise has profound effects on mental health and cognitive function. Engaging in physical activity releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. </p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="thirdsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Mental Health and Relaxation">Mental Health and Relaxation
+                </h1><br>
+                <p class="text-small">
+                    <img class="picture" src="3.jpg" slt="nutrition" style="float: left;"><br>
+                    Mental health is a multifaceted aspect of overall well-being that encompasses emotional, psychological, and social dimensions. It influences how individuals think, feel, and act, shaping their perceptions, relationships, and responses to life's challenges. Just as physical health is crucial, so is mental health, as it profoundly impacts every aspect of daily life.
+                    In the modern world, where stressors abound and the pace of life can be relentless, finding ways to prioritize mental health and incorporate relaxation practices into daily routines is paramount. Relaxation is the antidote to stress, offering a reprieve from the demands of everyday life and allowing individuals to recharge and rejuvenate their minds and bodies.
+                    There are numerous techniques and activities that promote relaxation and support mental health. Mindfulness meditation, for instance, involves paying attention to the present moment without judgment, helping to reduce stress and anxiety while fostering a sense of inner calm and clarity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fourthsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Social Connections">Social Connections
+                </h1>
+                <p class="text-small">
+                    <img class="picture" src="4.jpg" slt="nutrition" style="float: right;"><br>
+                    Social connections are fundamental to human well-being, shaping our sense of identity, belonging, and purpose. They encompass the relationships we cultivate with family, friends, colleagues, and communities, providing opportunities for support, companionship, and shared experiences.
+                    Research consistently demonstrates the profound impact of social connections on mental, emotional, and physical health. Strong social ties are associated with lower rates of depression, anxiety, and stress, as well as greater resilience in the face of adversity. Meaningful relationships offer a sense of validation, acceptance, and understanding, bolstering self-esteem and fostering a positive outlook on life.
+                    Moreover, social connections contribute to physical well-being by promoting healthy behaviors and lifestyle choices. Engaging in activities with others, such as exercising, dining together, or pursuing hobbies, not only enhances enjoyment but also encourages accountability and motivation.
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Sleep and Rest">Sleep and Rest
+                </h1><br>
+                <p class="text-small">
+                    <img class="picture" src="5.jpg" slt="nutrition" style="float: left;"><br>
+                    Sleep and rest are essential components of overall health and well-being, playing critical roles in physical, mental, and emotional functioning. Sleep is a naturally recurring state characterized by reduced consciousness, decreased sensory activity, and altered brainwave patterns. It is a vital process that allows the body to repair, regenerate, and consolidate memories.
+                    Quality sleep is crucial for numerous physiological functions, including immune system regulation, hormone balance, and cellular repair. Adequate rest supports cognitive processes such as learning, memory consolidation, and decision-making. Furthermore, sleep plays a significant role in emotional regulation, with insufficient sleep linked to mood disturbances, irritability, and heightened stress responses.
+                    Establishing healthy sleep habits, also known as sleep hygiene, is essential for optimizing sleep quality and duration. This includes maintaining a consistent sleep schedule, creating a relaxing bedtime routine, and cultivating a comfortable sleep environment free from distractions and disruptions.
+                </p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="secondsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Outdoor Activities">Outdoor Activities
+                </h1>
+                <p class="text-small">
+                    <img class="picture" src="6.jpg" slt="nutrition" style="float: right;"><br>
+                    Outdoor activities encompass a diverse array of recreational pursuits that take place in natural environments, offering individuals opportunities for physical exercise, mental relaxation, and connection with nature. From hiking through scenic trails and camping under the stars to cycling along picturesque routes and exploring waterways through kayaking or canoeing, outdoor activities cater to a wide range of interests and skill levels. Whether it's fishing in a serene lake, rock climbing on rugged cliffs, or simply enjoying a leisurely picnic in a park, outdoor activities provide countless benefits for overall well-being. Engaging in these pursuits fosters physical fitness, reduces stress, promotes mental clarity, and cultivates a deeper appreciation for the natural world. 
+                    Whether pursued solo, with friends, or as part of organized group outings, outdoor activities offer opportunities for adventure, exploration, and rejuvenation amidst the beauty of the great outdoors.
+
+            </div>
+        </div>
+    </section>
+
+    <section class="thirdsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Professional Support">Professional Support
+                </h1><br>
+                <p class="text-small">
+                    <img class="picture" src="8.jpg" slt="nutrition" style="float: left;"><br>
+                    Professional support refers to the assistance, guidance, and expertise provided by trained professionals in various fields to help individuals address specific challenges, achieve goals, or navigate complex situations. This support can encompass a wide range of disciplines, including mental health counseling, therapy, coaching, financial planning, legal advice, career counseling, and more.
+                    In the realm of mental health, professional support may involve therapy sessions with psychologists, psychiatrists, or licensed counselors to address issues such as anxiety, depression, trauma, or relationship problems. These professionals offer evidence-based interventions, strategies, and support to help individuals improve their mental well-being and cope with life's challenges.
+                    In other areas, such as finance and legal matters, professional support may come from financial advisors, accountants, lawyers, or estate planners who provide expertise and guidance on managing finances, navigating legal issues, or planning for the future.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fourthsection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <h1 class="text-big" id="Nature and Environment">Nature and Environment
+                </h1>
+                <p class="text-small">
+                    <img class="picture" src="7.jpg" slt="nutrition" style="float: right;"><br>
+                    Nature and the environment encompass the intricate balance of ecosystems, natural resources, and living organisms that constitute our planet. From expansive forests and pristine oceans to vast deserts and towering mountains, the natural world is a source of awe-inspiring beauty and essential sustenance for all life forms.
+                    The environment encompasses the air we breathe, the water we drink, the soil that supports plant life, and the climate that shapes our weather patterns. It includes the diverse array of species that inhabit Earth, from microscopic bacteria to majestic mammals, each playing a vital role in maintaining ecological balance.
+                    Nature provides a multitude of benefits to humanity, including clean air and water, fertile soil for agriculture, and a rich diversity of plants and animals that sustain our food systems. It also offers opportunities for recreation, relaxation, and spiritual renewal, fostering a deep connection between humans and the natural world.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>We believe that true well-being encompasses more than just physical health—it’s a harmonious
+                    balance of mind, body, and spirit. Our journey began with a simple idea: to empower individuals
+                    to live their healthiest, most vibrant lives. Founded by passionate health enthusiasts, we
+                    embarked on a mission to create a space where wellness is not a luxury but a birthright. Our
+                    personal experiences with holistic healing, nutrition, and mindfulness inspired us to share our
+                    knowledge with the world. Imagine a world where everyone wakes up feeling energized, nourished,
+                    and mentally resilient. Our vision is to be the catalyst for positive change, one person at a
+                    time. We blend ancient wisdom with modern science and our approach is holistic and personalized.
+                    We measure success not by profits, but by the positive impact we create. Join us in making
+                    well-being contagious. Ready to prioritize your health? Explore our services, attend our
+                    workshops, and connect with our vibrant community. Let’s walk this path together—because good
+                    health is a shared adventure.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">Gallery</a></li>
+                    <li><a href="services.html">Shop</a></li>
+                    <li><a href="contact.html">Sitemap</a></li>
+                    <li><a href="contact.html">User Profile</a></li>
+                    <li class="dropdown2">
+                        <select
+                            onchange="if(this.value !== '#') { window.location.href=this.value; this.value = '#'; }">
+                            <option value="#">Page Editor</option>
+                            <option value="page1.html">Student 1</option>
+                            <option value="page2.html">Student 2</option>
+                            <option value="page3.html">Student 3</option>
+                            <option value="page3.html">Student 4</option>
+                        </select>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Good Health and Well-being | Designed by Dijital Divas
+        </div>
+    </footer>
+</body>
+
+</html>
